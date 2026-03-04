@@ -1,0 +1,31 @@
+Dias 1 e 2: A Base (Projetos)
+
+Tempo estimado: 5 a 6 horas no total (2,5h a 3h por dia).
+
+O que fazer: Criar as structs (Projeto e Árvore), inicializar a lista principal e criar as funções de inserir, buscar e remover Projetos.
+
+Foco: Garantir que a lista duplamente encadeada principal funcione perfeitamente antes de colocar coisas dentro dela.
+
+Dias 3 e 4: O Desafio (Árvores dentro dos Projetos)
+
+Tempo estimado: 7 a 8 horas no total (3,5h a 4h por dia).
+
+O que fazer: Criar a função que busca um Projeto específico pelo nome ou ID e, dentro dele, insere um novo nó na sublista de Árvores. Fazer também a remoção e listagem dessas árvores.
+
+Foco: Essa é a parte mais demorada, pois envolve ponteiro de ponteiro. É aqui que os erros de Segmentation fault costumam aparecer. Vai exigir paciência.
+
+Dia 5: Persistência de Dados (Arquivos .txt)
+
+Tempo estimado: 4 a 5 horas.
+
+O que fazer: Criar uma função para salvar toda a estrutura atual em um arquivo de texto e outra função para ler esse arquivo quando o programa iniciar, repovoando as listas.
+
+Foco: Entender como varrer as duas listas (a principal e a sublista) usando while para gravar os dados na ordem correta usando fprintf.
+
+Dias 6 e 7: Extras, Testes e Relatório
+
+Tempo estimado: 8 a 10 horas no total (4h a 5h por dia).
+
+O que fazer: Implementar as funções de contagem (ex: contar total de árvores), tentar "quebrar" seu próprio código para achar falhas (ex: tentar remover algo que não existe) e escrever o PDF do relatório.
+
+Foco: O relatório exige exemplos claros e prints. Como o código já vai estar rodando, o esforço aqui é mais de documentação e revisão para garantir a nota.

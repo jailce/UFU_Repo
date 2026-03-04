@@ -1,0 +1,68 @@
+P|1|Parque do Sabia|4.50
+A|1|Ipe Amarelo|plantada
+A|2|Pequi|nao plantada
+A|3|Jatoba|plantada
+A|4|Candeia|plantada
+A|5|Aroeira|nao plantada
+P|2|Margens do Rio Uberabinha|8.20
+A|1|Angico|plantada
+A|2|Pau-Ferro|plantada
+A|3|Ipe Roxo|nao plantada
+A|4|Cedro|plantada
+A|5|Jacaranda|nao plantada
+A|6|Embauba|plantada
+A|7|Sangra-d'agua|plantada
+A|8|Inga|nao plantada
+A|9|Paineira|plantada
+A|10|Genipapo|nao plantada
+P|3|Reserva Ecologica do Cerrado|25.00
+A|1|Sucupira|plantada
+A|2|Baru|plantada
+A|3|Cagaita|nao plantada
+A|4|Mangaba|plantada
+A|5|Buriti|nao plantada
+A|6|Ipe Amarelo|plantada
+A|7|Ipe Branco|plantada
+A|8|Pequi|nao plantada
+A|9|Jatoba|plantada
+A|10|Candeia|nao plantada
+A|11|Aroeira|plantada
+A|12|Angico|plantada
+A|13|Pau-Ferro|nao plantada
+A|14|Cedro|plantada
+A|15|Jacaranda|nao plantada
+A|16|Embauba|plantada
+A|17|Sangra-d'agua|plantada
+A|18|Inga|nao plantada
+A|19|Paineira|plantada
+A|20|Genipapo|plantada
+A|21|Sucupira|nao plantada
+A|22|Baru|plantada
+A|23|Cagaita|plantada
+A|24|Mangaba|nao plantada
+A|25|Buriti|plantada
+A|26|Ipe Amarelo|nao plantada
+A|27|Ipe Branco|plantada
+A|28|Pequi|plantada
+A|29|Jatoba|nao plantada
+A|30|Candeia|plantada
+A|31|Aroeira|plantada
+A|32|Angico|nao plantada
+A|33|Pau-Ferro|plantada
+A|34|Cedro|nao plantada
+A|35|Jacaranda|plantada
+A|36|Embauba|plantada
+A|37|Sangra-d'agua|nao plantada
+A|38|Inga|plantada
+A|39|Paineira|plantada
+A|40|Genipapo|nao plantada
+A|41|Sucupira|plantada
+A|42|Baru|nao plantada
+A|43|Cagaita|plantada
+A|44|Mangaba|plantada
+A|45|Buriti|nao plantada
+A|46|Ipe Roxo|plantada
+A|47|Ipe Amarelo|plantada
+A|48|Jatoba|nao plantada
+A|49|Candeia|plantada
+A|50|Angico|plantada
