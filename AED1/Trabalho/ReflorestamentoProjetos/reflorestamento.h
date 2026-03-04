@@ -35,7 +35,7 @@ typedef struct ListaProjetos {
 } ListaProjetos; 
 
 
-//=====================     FUNÇÕES   ==========================
+//=====================     FUNÇÕES   ============================
 ListaProjetos* criarLista(); // Criar lista vazia
 
 //=====================     FUNÇÕES PROJETO     ==========================

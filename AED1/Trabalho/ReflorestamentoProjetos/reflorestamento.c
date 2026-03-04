@@ -454,7 +454,7 @@ void menuDetalhes(ListaProjetos * listaProj, Projeto * projetoSelecionado)
       printf("Nome do projeto: %s\n", projetoSelecionado -> nome);
       printf("Area do projeto: %.2f alqueires\n", projetoSelecionado -> area);
       printf("Quantidade de arvores: %d\n", projetoSelecionado -> quantArvores);
-      printf("===================================================================================================\n");
+      printf("====================================================================================================\n");
 
 
 
