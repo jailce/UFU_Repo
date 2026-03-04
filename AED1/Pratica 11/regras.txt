@@ -1,89 +1,16 @@
-Prática 9 - LE Circular
-Condições de conclusão
-Lista circular encadeada - Definição:
-É uma variação da lista encadeada em que o último nó da lista aponta de volta para o primeiro nó, formando um ciclo. Diferentemente de uma lista encadeada simples (o último nó aponta para NULL), em uma lista circular, o ponteiro do último nó não é nulo; ele aponta para o primeiro nó da lista.
+Um grupo de N pessoas necessita eleger um líder. Uma pessoa sugeriu os seguintes passos para esta escolha:
 
-Para que serve?
-Navegação contínua: Uma lista circular permite navegação contínua entre os elementos, sem a necessidade de retornar ao início manualmente.
-Eficiência na rotação: Movimentos circulares, como percorrer repetidamente uma lista, são otimizados. Em listas circulares, a rotação é mais eficiente, pois não há necessidade de criar uma condição especial ao chegar ao último elemento.
+Colocar todas as N pessoas em um círculo, e a escolha deve basear-se em percursos circulares nas duas direções. Uma pessoa recebe uma caixa, e é considerada a posição de número 1 no círculo.
+Sortear um número K qualquer.
+A partir deste sorteio, a caixa deve andar K-1 posições alternando entre:
+percurso K-1 à direita: a pessoa que receber a caixa está eliminada, devendo passar a caixa para o seu colega do lado à esquerda. 
+percurso K-1 à esquerda: a pessoa que receber a caixa está eliminada, devendo passar a caixa para o seu colega do lado à direita.  
+A última pessoa que restar será o líder do grupo.
+Para este problema necessita-se implementar as funções para lista duplamente ligada e circular:
+
+inserir nó no início
+remover um nó a partir de um ponteiro
+percurso para frente
+percurso para trás
+escolha do líder (percurso + remoção)
  
-Operações:
-As operações em uma lista circular encadeada são semelhantes às de uma lista encadeada comum, com algumas diferenças devido à sua natureza circular:
-
-Criação: O primeiro nó é criado e o seu ponteiro aponta para ele mesmo, formando o ciclo.
-Inserção:
-No início: Um novo nó é inserido antes do primeiro nó, e o último nó da lista deve ter seu ponteiro ajustado para apontar para esse novo nó.
-No fim: O novo nó é inserido após o último nó e o ponteiro do último nó é ajustado para apontar para o primeiro.
-Remoção: Semelhante à lista encadeada simples, mas é necessário ter cuidado com o ajuste dos ponteiros para garantir que o ciclo permaneça intacto.
-Percorrer: A lista pode ser percorrida indefinidamente, pois não há um nó nulo para indicar o fim. O loop continua até que se retorne ao primeiro nó.
-Problema:
-Pense em um sistema para controlar o ciclo de abastecimento de uma frota de naves em uma missão interplanetária. Essas naves estão dispostas em uma órbita circular ao redor de uma estação espacial, e o sistema precisa garantir que todas sejam abastecidas de forma eficiente. Cada nave possui uma capacidade de combustível diferente, e o sistema de abastecimento deve seguir uma ordem cíclica, reabastecendo as naves em sequência.
-
-Crie um programa em linguagem C com os seguintes requisitos:
-Cada nó da lista circular deve representar uma nave, contendo informações como a capacidade máxima de combustível e o combustível atual.
-O sistema deve permitir que o usuário forneça a quantidade inicial de combustível de cada nave e a quantidade de combustível por ciclo que será distribuída entre as naves.
-A cada ciclo, o sistema abastece a nave atual, atualizando seu nível de combustível, e então passa para a próxima nave na órbita.
-Quando uma nave estiver com o tanque cheio, ela não recebe mais combustível, mas o sistema ainda passa por ela para verificar o estado de outras naves.
-O processo termina quando todas as naves estão com os tanques cheios.
-Exemplo de Entrada:
-Naves: 4
-Capacidade de combustível das naves: [50, 75, 60, 90]
-Combustível inicial das naves: [20, 50, 40, 80]
-Quantidade de combustível por ciclo: 10 unidades
-
-// Definição das estruturas
-typedef struct No {
-    int id;
-    int capacidadeMaxima;
-    int combustivelAtual;
-    struct No *prox;
-} No;
-
-typedef struct {
-    No *inicio;
-    int tamanho;
-} Descritor;
-
-// Criar lista vazia (primeiro nó aponta para si mesmo)
-Descritor* criarLista() {
-    Descritor *desc = malloc(sizeof(Descritor));
-    desc->inicio = NULL;
-    desc->tamanho = 0;
-    return desc;
-}
-
-// Adicionar nave no final (mantém a circularidade)
-void adicionarNovoNave(Descritor *lista, int id, int capacidadeMax, int combustivelInicial) {
-    No *novo = malloc(sizeof(No));
-    novo->id = id;
-    novo->capacidadeMaxima = capacidadeMax;
-    novo->combustivelAtual = combustivelInicial;
-    
-    if (lista->inicio == NULL) {
-        // Primeiro nó aponta para si mesmo
-        novo->prox = novo;
-        lista->inicio = novo;
-    } else {
-        // Encontrar o último nó e apontá-lo para o novo
-        No *atual = lista->inicio;
-        while (atual->prox != lista->inicio) {
-            atual = atual->prox;
-        }
-        atual->prox = novo;
-        novo->prox = lista->inicio;  // Manter a circularidade
-    }
-    lista->tamanho++;
-}
-
-// Abastecer todas as naves em ciclos
-void abastecerNaves(Descritor *lista, int combustivelPorCiclo) {
-    if (lista->inicio == NULL) return;
-    
-    No *atual = lista->inicio;
-    int todasCheias = 0;
-    
-    while (!todasCheias) {
-        todasCheias = 1;
-        No *temp = atual;
-        
-        // Verificar cada nave

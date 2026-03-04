@@ -1,37 +1,47 @@
-#include "lista.h"
+#include <stdio.h> // Não esqueça de incluir o stdio para printf/scanf
+#include "roda.h"
+#include <time.h>
 
 int main() {
-    int numNaves, combustivelPorCiclo;
-    
-    // Ler entrada
-    printf("Número de naves: ");
-    scanf("%d", &numNaves);
-    
-    Descritor *frota = criarLista();
-    
-    // Ler capacidades e combustível inicial
-    for (int i = 0; i < numNaves; i++) {
-        int cap, combustivel;
-        printf("Nave %d - Capacidade: ", i + 1);
-        scanf("%d", &cap);
-        printf("Nave %d - Combustível inicial: ", i + 1);
-        scanf("%d", &combustivel);
-        
-        adicionarNovoNave(frota, i + 1, cap, combustivel);
+    //Criar a roda
+    Roda* minhaRoda = criarRoda();
+    int quantidadeDancarinos;
+
+    //Quantidade de dancarinos iniciais
+    printf("==============================\n");
+    printf("  PROVA DO LIDER SARAJANE    \n");
+    printf("=============================\n");
+    printf("Vamos abrir a roda!\n");
+    printf("-----------------------------\n");
+    printf("Digite a quantidade de dancarinos na roda: ");
+  
+    scanf("%d", &quantidadeDancarinos); // Agora sim, ele só espera o número!
+     // Preencher a roda com a quantidade N
+    for (int i = 1; i <= quantidadeDancarinos; i++) {
+        inserirInicio(minhaRoda, i); 
     }
-    
-    printf("Combustível por ciclo: ");
-    scanf("%d", &combustivelPorCiclo);
-    
-    // Abastecer
-    abastecerNaves(frota, combustivelPorCiclo);
-    
-    // Exibir resultado final
-    printf("\nEstado final das naves:\n");
-    exibirNaves(frota);
-    
-    // Liberar memória
-    liberarLista(frota);
-    
+
+
+
+    printf("Roda criada com %d dancarinos posicionados.\n\n", minhaRoda->quant);
+
+    printf("-----------------------------\n");
+
+
+     //Inserir o numero K de forma random, aleatoria
+    int distanciaK;
+   
+    srand(time(NULL));  
+    distanciaK = rand() % quantidadeDancarinos;  // Sorteia de 1 até N
+    printf("Valor da distancia(K) sorteado: %d\n\n", distanciaK);
+
+
+    // Escolher o lider
+    escolherLider( minhaRoda, distanciaK ); // Passar K como distância para os percursos, eliminei k - 1 para evitar auto eliminação
+
+  
+    free(minhaRoda);  
+
+
     return 0;
 }
