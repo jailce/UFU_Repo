@@ -9,7 +9,7 @@
 typedef struct Arvore {
     int id;
     char especie[50];
-    char status[20]; // plantada, não plantada
+    int status; // 0 para "nao plantada", 1 para "plantada"
     struct Arvore* prox;
     struct Arvore* ant;
  
@@ -59,7 +59,9 @@ void menuDetalhes(ListaProjetos* listaProj, Projeto* projeto);
 void salvarDados(ListaProjetos* listaProj);
 void carregarDados(ListaProjetos* listaProj);
 
-
+//=====================     FUNÇÃO RELATÓRIO     ==========================
+void relatorioArvoresPlantadas(ListaProjetos* listaProj);
+int contarEspecieTotal(ListaProjetos* listaProj, char* especieBusca);
 
 #endif
 

@@ -66,6 +66,3 @@ A|47|Ipe Amarelo|plantada
 A|48|Jatoba|nao plantada
 A|49|Candeia|plantada
 A|50|Angico|plantada
-P|4|Chaves|1000.00
-A|1|kiko|plantada
-A|2|chiquinha|nao plantada
